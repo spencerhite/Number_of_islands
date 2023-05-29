@@ -1,0 +1,3 @@
+C:/Users/Spencer/CLionProjects/Number_of_islands/cmake-build-debug/CMakeFiles/Number_of_islands.dir
+C:/Users/Spencer/CLionProjects/Number_of_islands/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Spencer/CLionProjects/Number_of_islands/cmake-build-debug/CMakeFiles/rebuild_cache.dir
