@@ -9,7 +9,7 @@ private:
         int nr = grid.size();
         int nc = grid[0].size();
 
-        grid[r][c] = '0'
+        grid[r][c] = '0';
     }
 public:
     int numIslands(vector<vector<char>>& grid){
