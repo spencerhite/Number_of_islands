@@ -1,8 +1,7 @@
 //
-// Created by Spencer on 5/31/23.
+// Created by Spencer on 5/29/23.
 //
 
-#include "mine.h"
 #include <iostream>
 #include <vector>
 using namespace  std;
