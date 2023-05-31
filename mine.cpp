@@ -10,18 +10,18 @@ using namespace  std;
 
 class Solved {
     void DFS_mark(vector<vector<char>>& matrix, int r, int c, int x, int y){
-        if(x<0 || y>=r || y<0 || x>=c || matrix[x][y]!='1')
+        if(x<0 || y>=r || y<0 || x>=0 || matrix[x][y]!='1')
             return;
 
         matrix[x][y] = '2';
 
-        DFS_mark(matrix,r,c,x+1,y); //This would be DOWN
-        DFS_mark(matrix,r,c,x,y+1); //THis goes RIGHT
-        DFS_mark(matrix,r,c,x-1,y); //This would go UP
-        DFS_mark(matrix,r,c,x,y-1); //This goes LEFT
+        DFS_mark(matrix,x+1,y,r,c); //This would be DOWN
+        DFS_mark(matrix,x,y+1,r,c); //THis goes RIGHT
+        DFS_mark(matrix,y-1,c,r,c); //This would go UP
+        DFS_mark(matrix,x,y-1,r,c); //This goes LEFT
     }
 public:
-    int numIslands(vector<vector<char>>& grid,int x,int y){
+    int numIslands(vector<vector<char>>& grid){
 
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
@@ -33,11 +33,11 @@ public:
 
         int num_islands = 0;
 
-        for(int r = x; r<rows; r++){
-            for(int c = y; c<col; c++){
+        for(int r = 0; r<rows; r++){
+            for(int c = 0; c<col; c++){
                 if(grid[r][c] == '1'){
                     num_islands++;
-                    DFS_mark(grid,rows,col,r,c);
+                    DFS_mark(grid,r,c,rows,col);
                 }
             }
         }
@@ -52,11 +52,8 @@ int main(int numIslands){
              {'1','1','0','0','0'},
              {'0','0','0','0','0'}};
 
-    int x = 0;
-    int y =0;
-
     Solved solution;
-    int result = solution.numIslands(grid, x, y);
+    int result = solution.numIslands(grid);
     cout<<"The number of found islands is/are: " << result << endl;
     return 0;
 
